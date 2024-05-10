@@ -1,6 +1,3 @@
-function capitalizeWords(str) {
-  return str
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}
+// Setup the client
+const aptosConfig = new AptosConfig({ network: APTOS_NETWORK });
+const aptos = new Aptos(aptosConfig);
