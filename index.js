@@ -1,21 +1,12 @@
-const combSort = (arr) => {
-  const shrinkFactor = 1.3;
-  let gap = arr.length;
-  let swapped = true;
-  while (gap > 1 || swapped) {
-    gap = Math.floor(gap / shrinkFactor);
-    if (gap < 1) {
-      gap = 1;
-    }
-    swapped = false;
-    let i = 0;
-    while (i + gap < arr.length) {
-      if (arr[i] > arr[i + gap]) {
-        [arr[i], arr[i + gap]] = [arr[i + gap], arr[i]];
-        swapped = true;
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
       }
-      i++;
     }
   }
   return arr;
-};
+}
